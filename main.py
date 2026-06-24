@@ -19,8 +19,7 @@ jogador.mostrar_ficha()
 
 print()
 
-Testes.testar(jogador, "forca")
-
-forca = Atributo("Força", 20)
-
-forca.mostrar()
+Testes.testar(jogador, "forca", 15)
+Testes.testar(jogador, "agilidade", 15)
+Testes.testar(jogador, "esperteza", 25)
+Testes.testar(jogador, "imunidade", 25)
