@@ -19,7 +19,4 @@ jogador.mostrar_ficha()
 
 print()
 
-Testes.testar(jogador, "forca", 15)
-Testes.testar(jogador, "agilidade", 15)
-Testes.testar(jogador, "esperteza", 25)
-Testes.testar(jogador, "imunidade", 25)
+resultado = Testes.testar(jogador, "forca", 15)
