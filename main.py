@@ -5,6 +5,7 @@ from itens.armas import Espada
 from itens.armadura import Armadura
 
 from sistema.testes import Testes
+from personagens.atributo import Atributo
 
 criador = CriadorPersonagem()
 jogador = criador.criar_personagem()
@@ -19,3 +20,7 @@ jogador.mostrar_ficha()
 print()
 
 Testes.testar(jogador, "forca")
+
+forca = Atributo("Força", 20)
+
+forca.mostrar()

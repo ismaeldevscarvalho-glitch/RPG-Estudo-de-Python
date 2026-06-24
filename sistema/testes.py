@@ -5,7 +5,9 @@ class Testes:
     @staticmethod
     def testar(personagem, atributo):
 
-        modificador = getattr(personagem.atributos, atributo)
+        atributo_obj = getattr(personagem.atributos, atributo)
+
+        modificador = atributo_obj.total
 
         dado = Dados.d20()
 
