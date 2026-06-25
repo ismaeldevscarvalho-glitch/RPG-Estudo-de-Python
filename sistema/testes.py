@@ -1,5 +1,5 @@
 from sistema.dados import Dados
-from sistema.resultado_teste import ResultadoTeste
+from sistema.resultados.resultado_teste import ResultadoTeste
 
 class Testes:
 
@@ -10,14 +10,16 @@ class Testes:
 
         modificador = atributo_obj.total
 
-        dado = Dados.d20()
+        rolagem = Dados.rolar("1d20")
 
-        resultado = dado + modificador
+        resultado_dado = rolagem.total
 
-        critico = dado == 20
-        falha_critica = dado == 1
+        resultado_final = resultado_dado + modificador
 
-        sucesso = resultado >= dificuldade
+        critico = resultado_dado == 20
+        falha_critica = resultado_dado == 1
+
+        sucesso = resultado_final >= dificuldade
 
         if critico:
             sucesso = True
@@ -26,27 +28,11 @@ class Testes:
             sucesso = False
 
         return ResultadoTeste(
-            dado,
+            rolagem,
             modificador,
-            resultado,
+            resultado_final,
             dificuldade,
             sucesso,
             critico,
             falha_critica
         )
-
-        '''print("=" * 35)
-        print(f"Teste de {atributo_obj.nome}")
-        print(f"D20.................: {dado}")
-        print(f"Atributo............: {atributo_obj.total:+}")
-        print(f"Resultado...........: {total:+}")
-        print(f"Dificuldade.........: {dificuldade}")
-    
-        if total >= dificuldade:
-            print("Sucesso!")
-            return True
-    
-        print("Falhou")
-        return False
-    
-        return total'''

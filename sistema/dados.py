@@ -1,27 +1,20 @@
 import random
 
+from sistema.resultados.resultado_rolagem import ResultadoRolagem
+
 class Dados:
 
     @staticmethod
-    def d20():
-        return random.randint(1, 20)
+    def rolar(expressao):
 
-    @staticmethod
-    def d12():
-        return random.randint(1, 12)
+        quantidade, faces = expressao.lower().split("d")
 
-    @staticmethod
-    def d10():
-        return random.randint(1, 10)
+        quantidade = int(quantidade)
+        faces = int(faces)
 
-    @staticmethod
-    def d8():
-        return random.randint(1, 8)
+        rolagens = []
 
-    @staticmethod
-    def d6():
-        return random.randint(1, 6)
+        for _ in range(quantidade):
+            rolagens.append(random.randint(1, faces))
 
-    @staticmethod
-    def d4():
-        return random.randint(1, 4)
+        return ResultadoRolagem(expressao, rolagens)

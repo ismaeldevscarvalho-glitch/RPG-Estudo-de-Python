@@ -1,6 +1,6 @@
 class ResultadoTeste:
     def __init__(self,
-                 dado,
+                 rolagem,
                  modificador,
                  resultado,
                  dificuldade,
@@ -9,7 +9,7 @@ class ResultadoTeste:
                  falha_critica
     ):
 
-        self.dado = dado
+        self.rolagem = rolagem
         self.modificador = modificador
         self.resultado = resultado
         self.dificuldade = dificuldade
@@ -23,7 +23,9 @@ class ResultadoTeste:
         print("=" * 40)
         print("           RESULTADO DO TESTE")
         print("=" * 40)
-        print(f"Dado............: {self.dado}")
+        print(f"Expressão........: {self.rolagem.expressao}")
+        print(f"Rolagens.........: {self.rolagem.rolagens}")
+        print(f"Total do dado....: {self.rolagem.total}")
         print(f"Modificador.....: {self.modificador}")
         print(f"Resultado.......: {self.resultado}")
         print(f"Dificuldade.....: {self.dificuldade}")
